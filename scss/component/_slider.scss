@@ -1,0 +1,163 @@
+@use "../utils/" as *;
+
+.slider {
+    width: 100%;
+    position: relative;
+    @include respond-above(xs) {
+        height: 50vh;
+    }
+    @include respond-above(sm) {
+        height: 60vh;
+    }
+    @include respond-above(md) {
+        height: 70vh;
+    }
+    @include respond-above(lg) {
+        height: 80vh;
+    }
+    &__container {
+        @include flexContainer(column, center, flex-start);
+        height: 100%;
+        &-item:not(.active) {
+            display: none;
+        }
+        &-item {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    .container {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+    &__overlay {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        @include flexContainer(column, center, flex-start);
+        &-text {
+            position: relative;
+            height: 100%;
+            @include toRem(padding-block, 50);
+            @include flexContainer(column, center, flex-start);
+            @include respond-above(xs) {
+                @include toRem(max-width, 480);
+                h2 {
+                    @include toRem(font-size, 50);
+                    @include toRem(line-height, 50);
+                }
+                p {
+                    @include toRem(font-size, 24);
+                    @include toRem(line-height, 24);
+                }
+            }
+            @include respond-above(sm) {
+                @include toRem(max-width, 480);
+                h2 {
+                    @include toRem(font-size, 75);
+                    @include toRem(line-height, 75);
+                }
+                p {
+                    @include toRem(font-size, 35);
+                    @include toRem(line-height, 35);
+                }
+            }
+            @include respond-above(md) {
+                @include toRem(max-width, 520);
+                h2 {
+                    @include toRem(font-size, 90);
+                    @include toRem(line-height, 90);
+                }
+                p {
+                    @include toRem(font-size, 45);
+                    @include toRem(line-height, 45);
+                }
+            }
+            h2 {
+                color: var(--color-white);
+                font-family: "SSPro-Light";
+                text-transform: uppercase;
+                font-weight: 300;
+            }
+            p {
+                font-family: "SSPro-Bold";
+                color: var(--color-white);
+                text-transform: uppercase;
+            }
+        }
+    }
+    &__dot {
+        width: 100%;
+        position: absolute;
+        @include toRem(bottom, 15);
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        &-items {
+            @include flexContainer(row, center, center);
+            @include toRem(gap, 10);
+            li {
+                cursor: pointer;
+                span {
+                    @include toRem(width, 10);
+                    @include toRem(height, 10);
+                    @include border-radius(10px);
+                    background-color: #eeeeee;
+                    display: block;
+                }
+                &.active {
+                    span {
+                        background-color: var(--color-white);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.slider__wrapper {
+    position: relative;
+    @include toRem(margin-block-start, 30);
+    @include toRem(padding-inline, 30);
+    .logo__slider {
+        position: relative;
+        @include toRem(margin-inline, 60);
+        @include respond-above(xs) {
+            @include toRem(margin-inline, 30);
+        }
+        overflow: hidden;
+        &--list {
+            @include flexContainer(row, flex-start, center);
+            overflow: hidden;
+            transition: transform .3s;
+            transform: translateX(0px);
+            gap: 60px;
+            &-item {
+                @include flexContainer(row, flex-start, center);
+            }
+        }
+    }
+    .slider__btn {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        cursor: pointer;
+        @include flexContainer(row, center, center);
+        &.prev {
+            @include toRem(left, 20);
+        }
+        &.next {
+            @include toRem(right, 20);
+            @include transform(rotate(180deg));
+        }
+    }
+}

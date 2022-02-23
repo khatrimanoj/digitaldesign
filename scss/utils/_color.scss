@@ -1,0 +1,27 @@
+@use "variable" as *;
+
+// scss-docs-start theme-colors-map
+
+.dark {
+    --color-primary: #008779;
+    --color-secondary: #cf9e69;
+    --color-black: #ffffff;
+    --color-white: #000000;
+}
+$colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "black": $black,
+    "white": $white,
+) !default;
+
+$colors-Shade: (
+    "primary-100": $primary,
+) !default;
+
+$darkMode-shade: (
+    "black": $black,
+) !default;
+
+$colorScheme: map-merge($colors, $colors-Shade);
+

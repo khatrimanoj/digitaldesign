@@ -1,0 +1,194 @@
+@use "../utils" as *;
+
+header {
+    &.fixed-menu {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+        -webkit-animation: slide-down 0.7s;
+        animation: slide-down 0.7s;
+        background: var(--color-white);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+    }
+    nav {
+        @include flexContainer(flex, space-between, center);
+        @include toRem(height, 85);
+        .brand-logo {
+            @include toRem(min-width, 175);
+            align-self: center;
+        }
+        .menu-toggle {
+            @include flexContainer(flex, space-between, center);
+            @include toRem(height, 40);
+            span {
+              @include toRem(width, 36);
+              @include toRem(height, 3);
+              background-color: var(--color-black);
+              display: block;
+              position: relative;
+              transition: 0.3s;
+              &:after {
+                content: "";
+                left: 0;
+                @include toRem(width, 36);
+                @include toRem(height, 3);
+                position: absolute;
+                @include toRem(top, 9);
+                background-color: var(--color-black);
+                @include transition(.3s all ease-in-out);
+              }
+              &:before {
+                content: "";
+                left: 0;
+                @include toRem(width, 36);
+                @include toRem(height, 3);
+                position: absolute;
+                @include toRem(bottom, 9);
+                background-color: var(--color-black);
+                @include transition(.3s all ease-in-out);
+              }
+            }
+            &.active {
+              span {
+                background-color: transparent;
+                &:before {
+                  @include transform(rotate(45deg));
+                  bottom: 0;
+                  background-color: var(--color-black);
+                }
+                &:after {
+                  @include transform(rotate(-45deg));
+                  background-color: var(--color-black);
+                  top: 0;
+                }
+              }
+            }
+        }
+        .menu-collapse {
+            position: absolute;
+            @include transform(translateY(-100%));
+            left: 0;
+            right: 0;
+            width: 100%;
+            opacity: 0;
+            z-index: 1;
+            visibility: hidden;
+            background-color: var(--color-white);
+            overflow: hidden;
+            @include toRem(top, 85);
+            @include transition(transform .3s ease-in-out);
+            &.active {
+                @include flexContainer(column,flex-start, stretch);
+                border-top: 1px solid #eeeeee;
+                @include transform(translateY(0%));
+                opacity: 1;
+                visibility: visible;
+                background-color: var(--color-primary);
+                @include transition(transform .3s ease-in-out);
+                .btn {
+                    @include toRem(padding-inline-start, 0);
+                    // margin-inline-start: 0;
+                    @include toRem(padding-block, 10);
+                    height: auto;
+                    background-color: var(--color-primary);
+                    color: var(--color-white);
+                    @include justify-content(flex-start);
+                    border: none;
+                }
+                ul {
+                    li {
+                        a {
+                            color: var(--color-white);
+                        }
+                    }
+                }
+                .dropdown {
+                    position: relative;
+                    top: 10px;
+                    width: 100%;
+                    background-color: var(--color-secondary);
+                    box-shadow: none;
+                    ul {
+                        padding-block: 0;
+                        li {
+                            padding-inline-start: 20px;
+                        }
+                    }
+                }
+            }
+            .btn {
+                @include toRem(margin-inline-start, 20);
+            }
+            ul {
+                li {
+                    border-bottom: 1px solid #eeeeee;
+                    @include toRem(padding-block, 10);
+                    a {
+                        @include toRem(font-size, 18);
+                        font-family: "SSPro-Bold";
+                        color: var(--color-black);
+                        position: relative;
+                        height: 100%;
+                        @include flexContainer(row, flex-start, center);
+                        @include toRem(padding-inline-start, 20);
+                        @include toRem(padding-inline-end, 20);
+                    }
+                }
+            }
+        }
+        @include respond-above(lg) {
+            @include flexContainer(flex, space-between, stretch);
+            .menu-toggle {
+                display: none;
+            }
+            .menu-collapse {
+                @include flexContainer(row, flex-end, center);
+                @include transform(translateY(0%));
+                position: relative;
+                opacity: 1;
+                visibility: visible;
+                max-height: unset;
+                overflow: unset;
+                top: 0;
+                ul {
+                    @include flexContainer(flex, flex-start,stretch);
+                    height: 100%;
+                    li {
+                        @include flexContainer(row, center, center);
+                        @include toRem(padding-block, 0);
+                        height: 100%;
+                        a {
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                width: 0;
+                                @include toRem(height, 6);
+                                background: var(--color-primary);
+                                @include transition(width .3s);
+                            }
+                            &.active, &:hover, &:focus {
+                                &::after {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+                .btn {
+                    @include toRem(margin-inline-start, 30);
+                }
+            }
+        }
+        @include respond-above(xl) {
+            .menu-collapse {
+                .btn {
+                    @include toRem(margin-inline-start, 135);
+                }
+            }
+        }
+    }
+}

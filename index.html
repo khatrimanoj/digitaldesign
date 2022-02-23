@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+
+  <meta http-equiv=X-UA-Compatible content="IE=edge">
+	<meta name=theme-color content="#008779" />
+
+  <title>Digital Design</title>
+
+	<meta property="og:image" content="https://khatrimanoj.github.io/digitaldesign/images/banner_1.jpg">
+	<meta name="twitter:card" content=summary_large_image>
+
+  <link rel="icon" href="assets/images/favicon.png" type="image/gif" sizes="16x16">
+
+  <!-- preload css -->
+  <link rel="preload" onload="this.rel = 'stylesheet'" as="style" href="assets/css/main.css">
+
+  <noscript>
+    <link rel="stylesheet" href="assets/css/main.css">
+  </noscript>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav role="navigation">
+        <a class="brand-logo" href="#" tabindex="-1" aria-label="brand name" aria-labelledby="digital design">
+          <img src="images/logo.png" alt="digital design logo" />
+        </a>
+        <button class="menu-toggle" type="button" data-toggle="collapse" data-target=".meu-collapse"
+          aria-controls="menu-collapse" aria-expanded="false" aria-label="Toggle menu navigation">
+          <span class="menu-toggler-icon"></span>
+        </button>
+        <div class="menu-collapse">
+          <ul>
+            <li><a href="#home" class="menu-item active" tabindex="0">Home</a></li>
+            <li><a href="#about" class="menu-item">About Us</a></li>
+            <li class="hasDropdown">
+              <a href="#service" class="menu-item">Services</a>
+              <div class="dropdown" role="sub-menu">
+                <ul>
+                  <li><a href="#">Service One</a></li>
+                  <li><a href="#">Service Two</a></li>
+                  <li><a href="#">Service Three</a></li>
+                  <li><a href="#">Service Four</a></li>
+                  <li><a href="#">Service Five</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#partnersec" class="menu-item">Partners</a>
+            </li>
+            <li><a href="#media" class="menu-item">Media</a></li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Contact Us</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="main-slider slider home" id="home" role="slider" aria-label="carousel slider">
+      <div class="slider__container">
+        <div class="slider__container-item active" style="background-image: url(images/banner_1.jpg);">
+          <!-- <img src="images/banner_1.jpg" alt="banner one" /> -->
+          <div class="slider__overlay">
+            <div class="container">
+              <div class="slider__overlay-text">
+                <h2>lorem ipsum</h2>
+                <p>Lorem ipsum dolor sit
+                  amet consectetur
+                  adipiscing elit...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider__container-item" style="background-image: url(images/banner_2.jpg);">
+          <!-- <img src="images/banner_2.jpg" alt="banner one" /> -->
+          <div class="slider__overlay">
+            <div class="container">
+              <div class="slider__overlay-text">
+                <h2>lorem ipsum</h2>
+                <p>Lorem ipsum dolor sit
+                  amet consectetur
+                  adipiscing elit...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider__container-item" style="background-image: url(images/banner_3.jpg);">
+          <!-- <img src="images/banner_3.jpg" alt="banner one" /> -->
+          <div class="slider__overlay">
+            <div class="container">
+              <div class="slider__overlay-text">
+                <h2>lorem ipsum</h2>
+                <p>Lorem ipsum dolor sit
+                  amet consectetur
+                  adipiscing elit...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider__dot">
+          <ul class="slider__dot-items">
+            <li class="active slider__dot-item" tabindex="0" onclick='currentSlide(1)'><span></span></li>
+            <li class="slider__dot-item" tabindex="0" onclick='currentSlide(2)'><span></span></li>
+            <li class="slider__dot-item" tabindex="0" onclick='currentSlide(3)'><span></span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container-inner">
+        <div class="section__heading">
+          <div class="title">Most Recent Projects</div>
+        </div>
+        <div class="grid">
+          <div class="grid__items grid1">
+            <figure tabindex="0">
+              <img src="images/project_img_1.jpg" alt="recent project" />
+              <figcaption>
+                <div class="icon">
+                  <img src="images/icon_2.svg" alt="icon" />
+                </div>
+                <div class="text">
+                  <p>Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit.</p>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="grid__items grid2">
+            <figure tabindex="0">
+              <img src="images/project_img_2.jpg" alt="recent project" />
+              <figcaption>
+                <div class="icon">
+                  <img src="images/icon_1.svg" alt="icon" />
+                </div>
+                <div class="text">
+                  <p>Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit.</p>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="grid__items grid3">
+            <figure tabindex="0">
+              <img src="images/project_img_3.jpg" alt="recent project" />
+              <figcaption>
+                <div class="icon">
+                  <img src="images/icon_3.svg" alt="icon" />
+                </div>
+                <div class="text">
+                  <p>Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit.</p>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="grid__items grid4">
+            <figure tabindex="0">
+              <img src="images/project_img_4.jpg" alt="recent project" />
+              <figcaption>
+                <div class="icon">
+                  <img src="images/icon_4.svg" alt="icon" />
+                </div>
+                <div class="text">
+                  <p>Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit.</p>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section partners" id="partnersec">
+      <div class="container-inner">
+        <div class="tab" role="tablist" aria-label="tabbing">
+          <ul class="tab__container">
+            <li role="tab" aria-selected="true" id="brand" tabindex="0">Brands</li>
+            <li role="tab" aria-selected="false" id="partner" tabindex="0">Partners</li>
+          </ul>
+        </div>
+        <div class="tab__content">
+          <div class="brand tab-pane" aria-labelledby="brand" role="tabpanel">
+            <div class="slider__wrapper">
+              <div class="logo__slider">
+                <ul class="logo__slider--list">
+                  <li class="logo__slider--list-item">
+                    <div class="logo" data-slide="1">
+                      <img src="images/brand_1.png" alt="brand image" />
+                    </div>
+                  </li>
+                  <li class="logo__slider--list-item">
+                    <div class="logo" data-slide="2">
+                      <img src="images/brand_2.png" alt="brand image" />
+                    </div>
+                  </li>
+                  <li class="logo__slider--list-item">
+                    <div class="logo" data-slide="3">
+                      <img src="images/brand_3.png" alt="brand image" />
+                    </div>
+                  </li>
+                  <li class="logo__slider--list-item">
+                    <div class="logo" data-slide="4">
+                      <img src="images/brand_4.png" alt="brand image" />
+                    </div>
+                  </li>
+                  <li class="logo__slider--list-item">
+                    <div class="logo" data-slide="5">
+                      <img src="images/brand_5.png" alt="brand image" />
+                    </div>
+                  </li>
+                  <li class="logo__slider--list-item">
+                    <div class="logo" data-slide="6">
+                      <img src="images/brand_1.png" alt="brand image" />
+                    </div>
+                  </li>
+                  <li class="logo__slider--list-item">
+                    <div class="logo" data-slide="7">
+                      <img src="images/brand_2.png" alt="brand image" />
+                    </div>
+                  </li>
+                  <li class="logo__slider--list-item">
+                    <div class="logo" data-slide="8">
+                      <img src="images/brand_3.png" alt="brand image" />
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <a class="slider__btn prev"><img src="images/arrow-icon.png" alt="arrow icon"></a>
+              <a class="slider__btn next"><img src="images/arrow-icon.png" alt="arrow icon"></a>
+            </div>
+          </div>
+          <div class="partner tab-pane" aria-labelledby="partner" role="tabpanel" hidden>
+            <div class="slider__wrapper">
+              <div class="logo__slider">
+                <ul class="logo__slider--list">
+                  <li class="logo__slider--list-item">
+                    <div class="logo" data-slide="1">
+                      <img src="images/partner_1.png" alt="partner image" />
+                    </div>
+                  </li>
+                  <li class="logo__slider--list-item">
+                    <div class="logo" data-slide="2">
+                      <img src="images/partner_2.png" alt="partner image" />
+                    </div>
+                  </li>
+                  <li class="logo__slider--list-item">
+                    <div class="logo" data-slide="3">
+                      <img src="images/partner_3.png" alt="partner image" />
+                    </div>
+                  </li>
+                  <li class="logo__slider--list-item">
+                    <div class="logo" data-slide="4">
+                      <img src="images/partner_4.png" alt="partner image" />
+                    </div>
+                  </li>
+                  <li class="logo__slider--list-item">
+                    <div class="logo" data-slide="5">
+                      <img src="images/partner_5.png" alt="partner image" />
+                    </div>
+                  </li>
+                  <li class="logo__slider--list-item">
+                    <div class="logo" data-slide="6">
+                      <img src="images/partner_1.png" alt="partner image" />
+                    </div>
+                  </li>
+                  <li class="logo__slider--list-item">
+                    <div class="logo" data-slide="7">
+                      <img src="images/partner_2.png" alt="partner image" />
+                    </div>
+                  </li>
+                  <li class="logo__slider--list-item">
+                    <div class="logo" data-slide="8">
+                      <img src="images/partner_3.png" alt="partner image" />
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <a class="slider__btn prev"><img src="images/arrow-icon.png" alt="arrow icon"></a>
+              <a class="slider__btn next"><img src="images/arrow-icon.png" alt="arrow icon"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="inquiry">
+        <div class="section__heading">
+          <div class="title">Inquiry Now</div>
+        </div>
+        <div class="container-inner">
+          <div class="form">
+            <form data-form="inquiry" class="inquiry-grid">
+
+              <div class="form-field name required">
+                <input id="fname" class="input-style" type="text" aria-required="true" aria-labelledby="fullname"
+                  required>
+                <label aria-label="placeholder"> Full Name</label>
+              </div>
+
+              <div class="form-field email required">
+                <input id="email" class="input-style" type="email" aria-required="true" aria-labelledby="email"
+                  required>
+                <label aria-label="placeholder"> Email Address</label>
+              </div>
+
+              <div class="form-field password">
+                <input id="password" class="input-style" onkeyup="passwordLength()" type="password"
+                  title="8 digit password with must use of some special characters such as ~!@#$%^&*_" required
+                  placeholder="Password" aria-labelledby="password">
+                <p class="input-info">8 digit password with must use of some special characters such as ~!@#$%^&*_</p>
+              </div>
+
+              <div class="form-field cpassword">
+                <input id="cpassword" class="input-style" type="password" required placeholder="Confirm Password"
+                  aria-labelledby="cpassword">
+              </div>
+
+              <div class="form-field comment-box">
+                <textarea name="comment-box" class="input-style" onkeyup="charCount(this);" rows="4"
+                  placeholder="Comment" id="comment-box" aria-labelledby="comment"></textarea>
+                <p class="input-info"><span class="charCount">0</span> / 200 (Run time character count)</p>
+              </div>
+
+              <div class="submit-button">
+                <button id="submit-btn" class="btn btn-white btn-inquiry" type="button" value="submit">submit</button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <button class="theme_btn-mode" role="switch" aria-clicked="false" aria-label="Change to dark mode">
+    <span></span>
+  </button>
+
+  <!-- toast message -->
+  <div data-message="msg"></div>
+
+  <script defer src="assets/js/main.js"></script>
+</body>
+
+</html>

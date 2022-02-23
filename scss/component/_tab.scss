@@ -1,0 +1,53 @@
+@use "../utils/" as *;
+
+.tab {
+    position: relative;
+    &__container {
+        @include flexContainer(row, center, center);
+        li {
+            @include respond-above(xs) {
+                @include toRem(font-size, 28);
+                @include toRem(padding-inline, 20);
+            }
+            @include respond-above(md) {
+                @include toRem(padding-inline, 40);
+                @include toRem(font-size, 45);
+            }
+            @include toRem(padding-block-end, 30);
+            font-family: "SSPro-Bold";
+            color: var(--color-black);
+            position: relative;
+            cursor: pointer;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                @include toRem(width, 14);
+                @include toRem(height, 14);
+                @include toRem(border-radius, 14);
+                background-color:var(--color-secondary);
+                opacity: 0;
+                visibility: none;
+                @include transition(opacity .3s);
+            }
+            &[aria-selected="true"] {
+                color:var(--color-secondary);
+                &::after {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+
+.tab__content {
+    width: 100%;
+    position: relative;
+    .tab-pane {
+        width: 100%;
+    }
+}

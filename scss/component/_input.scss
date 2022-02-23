@@ -1,0 +1,59 @@
+@use "../utils/" as *;
+.input-style {
+    width: 100%;
+    @include toRem(height, 50);
+    @include border-radius(5px);
+    background-color: var(--color-white);
+    @include flexContainer(row, flex-start, center);
+    color: var(--color-black);
+    @include toRem(font-size, 15);
+    @include toRem(line-height, 25);
+    outline: none;
+    @include toRem(padding-inline, 20);    
+}
+textarea {
+    height: auto !important;
+    resize: none;
+    @include toRem(padding-block-start, 15);
+}
+
+.form-field {
+    position: relative;
+    &.required {
+        background-color: var(--color-white);
+        height: 50px;
+        @include border-radius(4px);
+        label {
+            position:absolute;
+            top:0;
+            bottom: 0;
+            @include toRem(padding-inline, 20);
+            z-index:1;
+            color: var(--color-black);
+            @include flexContainer(row, flex-start, center);
+            &::after {
+                content:"*";
+                color:red;
+            }
+        }
+        .input-style {
+            background-color: transparent;
+            z-index: 9;
+            position: relative;
+        }
+        .input-style:focus + label,
+        .input-style[required]:valid + label { 
+            display: none;
+        }
+    }
+    label {
+        display: none;
+    }
+}
+
+.input-info {
+    @include toRem(font-size, 13);
+    color: var(--color-white);
+    font-family: "SSPro-Regular";
+    font-style: italic;
+}
